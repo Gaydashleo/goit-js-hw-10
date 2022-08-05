@@ -1,11 +1,9 @@
-const inputFormEl = document.querySelector("#search-box");
-const countryListEl = document.querySelector(".country-list");
+const BASE_URL = "https://restcountries.com/v3.1";
 
-fetchCountries('https://restcountries.com/v3.1/name/{name}')
-  .then((respose) => respose.json())
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+const URL = `${BASE_URL}?/name/{name}&capital&population&flags&languages`;
+export function fetchCountries(name) {
+  URL
+  return fetch(URL).then((response) => response.json());
+}
+  
+ 
